@@ -1,6 +1,6 @@
 export default{
 
-/**
+	/**
  * 
  * @swagger
  * 
@@ -13,7 +13,7 @@ export default{
  *       type: string
  *       content:
  *       text/plain:
- *       example: "Bienvenidos a Typescript"
+ *       example: "Bienvenidos a typescript"
  * 
  * 
  */

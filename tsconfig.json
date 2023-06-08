@@ -1,13 +1,12 @@
 {
-    "compilerOption":{
-        "target":"ES6",
-        "module":"CommonJS",
-        "rootDir":"src",
-        "outDir":"dist",
-        "strict":true,
-        "esModuleInterop":true
+    "compilerOptions": {
+      "target": "ES6", 
+      "module": "CommonJS",
+      "rootDir": "src",
+      "outDir": "dist",
+      "strict": true,
+      "esModuleInterop": true
     },
-
-    "include":["src/**/*", "tsconfig.json"],
-    "exclude":["node_modules"]
-}
+    "include": ["src/*/"],
+    "exclude": ["node_modules"]
+  }
