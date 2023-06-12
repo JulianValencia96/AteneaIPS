@@ -3,7 +3,9 @@ import { serve, setup } from 'swagger-ui-express'
 import { swaggerSpec } from './swagger.conf'
 import express, { Application, Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client'
-import PacienteRouter from './routes/PacienteRouter'
+import PacienteRouter from './routes/Paciente.routes'
+import MedicoRouter from './routes/Medico.routes'
+import FormularioRouter from './routes/Formulario.routes'
 class App {
 	public app: Application
 	private server: any
@@ -19,17 +21,25 @@ class App {
 
 		this.prismaClient = new PrismaClient()
 		this.routes()
+
+
 	}
 
 	private routes(): void {
-	
-	
+		const pacienteRouter = new PacienteRouter()
+		const medicoRouter = new MedicoRouter()
+		
+		this.app.use('/', pacienteRouter.router)
+		this.app.use('/', medicoRouter.router)
+		this.app.use('/', FormularioRouter)
+		
+		
 	}
 	
 
 	public start(): void {
-		this.server = this.app.listen(3001, () => {
-			console.log('Puerto 3001 en ejecución')
+		this.server = this.app.listen(3000, () => {
+			console.log('Puerto 3000 en ejecución')
 		})
 	}
 

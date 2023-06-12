@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "ts-node src/index.ts",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "jsonschema": "prisma generate --generator=jsonSchema"
   },
   "author": "Julian Valencia",
   "license": "ISC",
@@ -33,6 +34,7 @@
     "eslint": "^8.42.0",
     "nodemon": "^2.0.22",
     "prisma": "^4.15.0",
+    "prisma-json-schema-generator": "^3.1.4",
     "ts-node": "^10.9.1"
   }
 }
