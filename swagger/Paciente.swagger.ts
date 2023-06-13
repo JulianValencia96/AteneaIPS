@@ -5,7 +5,7 @@ export default{
      * @swagger
      * 
      * /paciente:
-     * post:
+     *  post:
      * summary: Obtener un mensaje de prueba
      * responses:
      *      200:

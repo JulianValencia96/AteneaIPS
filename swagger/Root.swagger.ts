@@ -5,7 +5,7 @@ export default{
  * @swagger
  * 
  * /:
- * get:
+ *  get:
  * summary: Obtener un mensaje de prueba
  * responses:
  *      200:

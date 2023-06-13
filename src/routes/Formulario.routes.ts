@@ -14,7 +14,7 @@ class FormularioRouter{
     private routes(){
         this.router.get(
             '/formulario/:formulario',
-            (res:Response, req:Request)=>{
+            (req:Request, res:Response)=>{
                 this.miFormularioController.obtenerDefinicion(req,res)
 
             }

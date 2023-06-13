@@ -1,3 +1,4 @@
+import cors from 'cors'
 import swaggerUi from 'swagger-ui-express'
 import { serve, setup } from 'swagger-ui-express'
 import { swaggerSpec } from './swagger.conf'
@@ -14,6 +15,7 @@ class App {
 	constructor() {
 		this.app = express()
 		this.app.use(express.json())
+		this.app.use(cors())
 		this.app.use('/api-docs', 
 			swaggerUi.serve, 
 			swaggerUi.setup(swaggerSpec)
@@ -34,8 +36,17 @@ class App {
 		this.app.use('/', FormularioRouter)
 		
 		
+		
 	}
-	
+
+	configurarCORS(req: any, res: { header: (arg0: string, arg1: string) => void }, next: () => void) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "GET, POST");
+        res.header("Access-Control-Allow-Headers", "Content-Type");
+        next();
+      }
+
+
 
 	public start(): void {
 		this.server = this.app.listen(3000, () => {
