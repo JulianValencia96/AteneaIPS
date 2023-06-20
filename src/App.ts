@@ -27,7 +27,25 @@ class App {
 
 	}
 
+	
+
+
 	private routes(): void {
+
+		this.app.get(
+            "/",
+            (req:Request, res:Response)=>{
+                res.send("Bienvenidos a typescript")
+            }
+        )
+        this.app.post(
+            "/paciente",
+            (req:Request, res:Response)=>{
+                res.send("Bienvenidos a typescript")
+            }
+        )
+    
+
 		const pacienteRouter = new PacienteRouter()
 		const medicoRouter = new MedicoRouter()
 		
@@ -49,8 +67,8 @@ class App {
 
 
 	public start(): void {
-		this.server = this.app.listen(3000, () => {
-			console.log('Puerto 3000 en ejecución')
+		this.server = this.app.listen(3002, () => {
+			console.log('Puerto 3002 en ejecución')
 		})
 	}
 
