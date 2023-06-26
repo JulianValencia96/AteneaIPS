@@ -6,6 +6,7 @@ import express, { Application, Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client'
 import PacienteRouter from './routes/Paciente.routes'
 import MedicoRouter from './routes/Medico.routes'
+import CitaRouter from './routes/Cita.routes'
 import FormularioRouter from './routes/Formulario.routes'
 class App {
 	public app: Application
@@ -44,13 +45,23 @@ class App {
                 res.send("Bienvenidos a typescript")
             }
         )
+
+		this.app.post(
+            "/cita",
+            (req:Request, res:Response)=>{
+                res.send("Bienvenidos a typescript")
+            }
+        )
+    
     
 
 		const pacienteRouter = new PacienteRouter()
 		const medicoRouter = new MedicoRouter()
+		const citaRouter = new CitaRouter()
 		
 		this.app.use('/', pacienteRouter.router)
 		this.app.use('/', medicoRouter.router)
+		this.app.use('/', citaRouter.router)
 		this.app.use('/', FormularioRouter)
 		
 		
