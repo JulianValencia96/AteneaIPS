@@ -27,6 +27,8 @@ class PacienteController{
         } = req.body
 
         const fechaNacimiento = new Date(fecha);
+      
+    // La fecha es válida, procede a crear el paciente
 
         const paciente = await this.prismaClient.paciente.create(
             {
@@ -39,13 +41,15 @@ class PacienteController{
                 }
             }
         )
+        
 
         res.json(paciente)
         }catch(e:any){
             res.status(400)
             res.json({eror:e.message})
         }
-    }
+        }
+    
 
 }
 

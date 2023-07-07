@@ -8,6 +8,7 @@ import PacienteRouter from './routes/Paciente.routes'
 import MedicoRouter from './routes/Medico.routes'
 import CitaRouter from './routes/Cita.routes'
 import FormularioRouter from './routes/Formulario.routes'
+import EspecialidadRouter from './routes/Especialidad.routes'
 class App {
 	public app: Application
 	private server: any
@@ -58,10 +59,12 @@ class App {
 		const pacienteRouter = new PacienteRouter()
 		const medicoRouter = new MedicoRouter()
 		const citaRouter = new CitaRouter()
+		const especialidadRouter = new EspecialidadRouter()
 		
 		this.app.use('/', pacienteRouter.router)
 		this.app.use('/', medicoRouter.router)
 		this.app.use('/', citaRouter.router)
+		this.app.use('/', especialidadRouter.router)
 		this.app.use('/', FormularioRouter)
 		
 		

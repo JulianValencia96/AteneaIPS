@@ -23,8 +23,8 @@ class CitaController{
             Fecha,
             cedulaPaciente,
             tarjetaProfesional,
-            pacienteCedula,
-            medicoTarjetaProfesional
+            Paciente,
+            Medico
 
             
                 /**
@@ -36,18 +36,18 @@ class CitaController{
 
         } = req.body
 
-        const fecha = new Date(Fecha)
+        //const fecha = new Date(Fecha)
 
         const cita = await this.prismaClient.cita.create(
             {
             data:{
                 idCita,
-                fecha,
+                fecha: new Date('2023-06-19T00:00:00'),
                 cedulaPaciente,
                 tarjetaProfesional,
-                pacienteCedula,
-                medicoTarjetaProfesional
-
+                Paciente,
+                Medico
+ 
                 /**
                  * Segun jsonSchema
                  * 
