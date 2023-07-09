@@ -22,11 +22,13 @@ class PacienteController{
             cedula,
             nombre,
             apellido,
-            fecha,
+            fechaNacimiento,
             telefono
         } = req.body
 
-        const fechaNacimiento = new Date(fecha);
+       
+        const fecha = new Date(fechaNacimiento.split("-").reverse().join("-"))
+        // const fechaNacimiento = new Date(fecha);
       
     // La fecha es válida, procede a crear el paciente
 
@@ -36,7 +38,7 @@ class PacienteController{
                 cedula,
                 nombre,
                 apellido,
-                fechaNacimiento,
+                fechaNacimiento: fecha,
                 telefono	
                 }
             }
